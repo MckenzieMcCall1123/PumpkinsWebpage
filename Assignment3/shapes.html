@@ -13,7 +13,64 @@
             var canvas = document.getElementById("canvas");
             var ctx = canvas.getContext("2d");
 
-            ctx.fillStyle = ""
+            //Square
+            ctx.strokeStyle = "black";
+            ctx.lineWidth = "5";
+            ctx.strokeRect(85, 302, 100, 100);
+            ctx.fillStyle = "yellow";
+            ctx.fillRect(85, 302, 100, 100);
+
+            //circle
+            ctx.beginPath();
+            ctx.arc(387, 442, 67, 0, 2 * Math.PI,false);
+            ctx.closePath();
+            ctx.fillStyle = "#ffff00";
+            ctx.fill();
+            ctx.strokeStyle = "red";
+            ctx.lineWidth = "5";
+            ctx.stroke();
+            
+            //Hexigon
+            ctx.fillStyle = "#ff00ff";
+            ctx.strokeStyle = "#00ffff";
+            ctx.lineWidth = "5";
+            ctx.beginPath();
+            ctx.lineTo(560, 310);
+            ctx.lineTo(670, 285);
+            ctx.lineTo(725, 380);
+            ctx.lineTo(650, 465);
+            ctx.lineTo(550, 425);
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+
+            //Star
+            ctx.fillStyle = "#ffff00";
+            ctx.strokeStyle = "#32,32,32";
+            ctx.lineWidth = "5";
+            ctx.beginPath();
+            ctx.lineTo(635, 495);
+            ctx.lineTo(670, 555);
+            ctx.lineTo(735, 570);
+            ctx.lineTo(690, 615);
+            ctx.lineTo(700, 685);
+            ctx.lineTo(635, 655);
+            ctx.lineTo(575, 685);
+            ctx.lineTo(580, 615);
+            ctx.lineTo(540, 570);
+            ctx.lineTo(600, 555);
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+
+            //Line
+            ctx.strokeStyle = "#255, 0, 0";
+            ctx.lineWidth = "5";
+            ctx.beginPath();
+            ctx.lineTo(85, 680);
+            ctx.lineTo(280, 550);
+            ctx.stroke();
+            ctx.closePath();
 
         </script>
     </body>
