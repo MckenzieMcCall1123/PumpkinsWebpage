@@ -11,8 +11,10 @@ var fps = 1000/60
 var timer = setInterval(main, fps)
 
 /*-------------INSTRUCTION--------------
-Create variable calledd score to store amount of "pickups" collected
+Create variable called score to store amount of "pickups" collected
 ---------------------------------------*/
+
+
 
 /*--------------avatar------------
 avatar is the "player controllable" Object
