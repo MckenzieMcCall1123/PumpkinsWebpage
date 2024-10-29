@@ -14,6 +14,8 @@ var timer = setInterval(main, fps)
 Create variable called score to store amount of "pickups" collected
 ---------------------------------------*/
 
+var score = 0;
+
 
 
 /*--------------avatar------------
@@ -21,8 +23,8 @@ avatar is the "player controllable" Object
 -----------------------------------*/
 var avatar = new GameObject();
 avatar.color = `#ff0099`;
-avatar.vx = 2;
-avatar.vy = 2;
+avatar.vx = 10;
+avatar.vy = 10;
 
 /*--------------testPickup------------
 testPickup is the example object used to demonstrate how the collision method works
@@ -40,9 +42,9 @@ testPickup.color = `#2244ff`;
 2. pickups is the array that holds all of the objects
 3. The "for loop" creates the objects at random locations 
 -----------------------------------*/
-var amt = 50;
-var pickups = [];
 
+var pickups = [];
+var amt = 50;
 for(var i=0; i<amt; i++)
 {
     pickups[i] = new GameObject();
@@ -107,6 +109,9 @@ function main()
         /*----------INSTRUCTION------------
         increase the score by one
         -----------------------------------*/
+
+        score++;
+
     }
 
     for(var i=0; i<pickups.length; i++)
@@ -114,7 +119,12 @@ function main()
         /*----------INSTRUCTION------------
         make the avatar "collect" the pickups and increase the score
         -----------------------------------*/
-       
+       if(pickups[i].overlaps(avatar)){
+        pickups[i].x = 100000;
+        //score +=1;
+        score++;
+        console.log(score);
+       }
         pickups[i].render();
     }
 
@@ -125,12 +135,17 @@ function main()
    //makes the text center aligned instead of left aligned
    ctx.textAlign = `center`;
 
+
+
     /*----------INSTRUCTION------------
     Set the context's font property to use 64px Arial 
     Draw the score on the canvas using the fillText() method
     HINT: You will have to research how this works 
     W3schools.com and your book can help
     -----------------------------------*/
+
+    ctx.font = "64px Arial";
+    ctx.fillText("score: " + score.toString(),150,80)
 }
 
 //random number generator
